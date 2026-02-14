@@ -1,0 +1,580 @@
+/* Clients.css */
+/* ... (Keep existing styles) ... */
+
+.clients-page {
+    background: #FDFBF7;
+    min-height: 100vh;
+    padding-bottom: 100px;
+}
+
+.page-header-refined {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(253, 251, 247, 0.95);
+    backdrop-filter: blur(8px);
+    padding: 16px 24px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.clients-content {
+    padding: 0 24px;
+}
+
+.section-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.section-heading-serif {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: #3D2C5E;
+    margin: 0;
+    font-weight: 700;
+}
+
+.client-count-badge {
+    background: #E5E7EB;
+    color: #6B7280;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.client-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Refined Client Card */
+.client-card-refined {
+    background: white;
+    padding: 16px;
+    /* Increased padding */
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.01);
+    display: flex;
+    flex-direction: column;
+    /* Changed to column to stack stat row */
+    gap: 12px;
+    transition: transform 0.1s;
+    cursor: pointer;
+}
+
+.client-card-refined:active {
+    transform: scale(0.98);
+}
+
+.client-card-main {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.client-avatar-refined {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #F3E8FF 0%, #D8B4FE 100%);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #3D2C5E;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.client-info {
+    flex: 1;
+}
+
+.client-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #3D2C5E;
+    margin: 0 0 4px;
+}
+
+.client-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.client-phone {
+    font-size: 0.8rem;
+    color: #9CA3AF;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.loyalty-pill-small {
+    background: #FEF3C7;
+    color: #D97706;
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.btn-action-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    background: #F9FAFB;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9CA3AF;
+}
+
+/* Stats Row in Card */
+.client-stats-row {
+    display: flex;
+    justify-content: space-between;
+    background: #F8F9FA;
+    border-radius: 12px;
+    padding: 10px 12px;
+    margin-top: 4px;
+}
+
+.client-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    flex: 1;
+}
+
+.client-stat-item.highlight .stat-value {
+    color: #3D2C5E;
+    font-weight: 800;
+}
+
+.stat-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    color: #9CA3AF;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.stat-value {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4B5563;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.stat-value small {
+    font-size: 0.7em;
+    font-weight: 500;
+}
+
+/* Modal Stats Box */
+.stats-summary-box {
+    background: #FDFBF7;
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    padding: 16px;
+    margin-top: 10px;
+}
+
+.stats-summary-box h4 {
+    margin: 0 0 12px 0;
+    font-size: 0.9rem;
+    color: #3D2C5E;
+    font-weight: 700;
+}
+
+.stats-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.stat-box {
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.stat-box .label {
+    font-size: 0.75rem;
+    color: #9CA3AF;
+}
+
+.stat-box .value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #3D2C5E;
+}
+
+/* History Link Button */
+.btn-history-link {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    margin-top: 20px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-history-link:active {
+    background: #F3F4F6;
+}
+
+.history-icon-box {
+    width: 40px;
+    height: 40px;
+    background: #F3E8FF;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9B7EC8;
+}
+
+.history-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.history-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #3D2C5E;
+}
+
+.history-sub {
+    font-size: 0.75rem;
+    color: #9CA3AF;
+}
+
+/* History List inside Modal */
+.modal-history-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.history-item {
+    background: white;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #E5E7EB;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.history-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.history-num {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #3D2C5E;
+}
+
+.history-date {
+    font-size: 0.75rem;
+    color: #9CA3AF;
+}
+
+.history-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.history-amount {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #4B5563;
+}
+
+.history-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-icon-tiny {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.btn-icon-tiny.share {
+    background: #DCFCE7;
+    color: #16A34A;
+}
+
+.btn-icon-tiny.download {
+    background: #EFF6FF;
+    color: #2563EB;
+}
+
+.empty-history {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+    color: #9CA3AF;
+    gap: 12px;
+}
+
+.btn-secondary {
+    background: #F3F4F6;
+    color: #4B5563;
+    border: none;
+    padding: 14px;
+    border-radius: 16px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+
+/* --- BOTTOM SHEET MODAL (Standardized) --- */
+/* ... (Keep existing modal styles) ... */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal-card {
+    background: #FDFBF7;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 32px 32px 0 0;
+    padding: 0;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.15);
+    animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+}
+
+.modal-handle-bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    cursor: grab;
+}
+
+.modal-handle-pill {
+    width: 40px;
+    height: 5px;
+    background: #E5E7EB;
+    border-radius: 10px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: #3D2C5E;
+    margin: 0;
+}
+
+.modal-scroll-content {
+    padding: 24px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.form-group span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4B5563;
+}
+
+.mt-4 {
+    margin-top: 24px;
+}
+
+.input {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    color: #3D2C5E;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.input:focus {
+    border-color: #9B7EC8;
+    box-shadow: 0 0 0 3px rgba(155, 126, 200, 0.15);
+}
+
+.modal-footer {
+    padding: 16px 24px 32px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    background: white;
+}
+
+.btn-primary.w-full {
+    width: 100%;
+    border-radius: 16px;
+    padding: 14px;
+    font-size: 1.1rem;
+    background: #3D2C5E;
+    color: white;
+    border: none;
+    font-weight: 600;
+}
+
+.btn-danger-outline {
+    border: 1px solid #fee2e2;
+    color: #ef4444;
+    background: #fef2f2;
+    border-radius: 16px;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    width: 100%;
+}
+
+.icon-btn {
+    background: #F3F4F6;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6B7280;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 768px) {
+    .modal-backdrop {
+        align-items: center;
+    }
+
+    .modal-card {
+        border-radius: 24px;
+        max-height: 85vh;
+    }
+
+    .modal-footer {
+        border-radius: 0 0 24px 24px;
+    }
+}
+
+/* FAB Add */
+.fab-add {
+    position: fixed;
+    bottom: 90px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    background: #3D2C5E;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(61, 44, 94, 0.4);
+    z-index: 80;
+    border: none;
+}

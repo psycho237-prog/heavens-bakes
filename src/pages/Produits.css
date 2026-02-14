@@ -1,0 +1,474 @@
+/* Produits.css */
+/* ... (Keep existing styles for page, header, list, etc.) ... */
+
+.produits-page {
+    background: #FDFBF7;
+    min-height: 100vh;
+    padding-bottom: 100px;
+    /* Space for FAB/Nav */
+}
+
+.page-header-refined {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(253, 251, 247, 0.95);
+    backdrop-filter: blur(8px);
+    padding: 16px 24px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.produits-content {
+    padding: 0 24px;
+}
+
+.section-heading-serif {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: #3D2C5E;
+    margin: 0 0 16px 0;
+    font-weight: 700;
+}
+
+.prod-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.prod-card-horizontal {
+    background: white;
+    padding: 12px 16px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.01);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.prod-card-img-wrapper {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f8f8f8;
+    flex-shrink: 0;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.prod-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.prod-card-info {
+    flex: 1;
+}
+
+.prod-card-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #3D2C5E;
+    margin: 0 0 4px 0;
+    line-height: 1.2;
+}
+
+.prod-card-stock {
+    font-size: 0.8rem;
+    color: #6B7280;
+    margin: 0;
+}
+
+.prod-card-stock.stock-low {
+    color: #EF4444;
+    font-weight: 600;
+}
+
+.prod-card-sub {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin-top: 2px;
+}
+
+.prod-card-end {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 12px;
+    min-width: 90px;
+}
+
+.prod-card-price {
+    font-weight: 800;
+    color: #3D2C5E;
+    font-size: 1.1rem;
+}
+
+.prod-card-price small {
+    font-size: 0.6em;
+    font-weight: 500;
+    color: #888;
+    margin-left: 2px;
+    text-transform: uppercase;
+}
+
+.btn-action-pill {
+    background: #F3E8FF;
+    color: #9B7EC8;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-action-pill:active {
+    background: #E9D5FF;
+}
+
+/* JUS section specific */
+.jus-section {
+    margin-top: 32px;
+}
+
+.jus-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.jus-card {
+    background: white;
+    border-radius: 16px;
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.01);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.jus-img-box {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #FAFAFA;
+    margin-bottom: 8px;
+}
+
+.jus-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.jus-info {
+    width: 100%;
+}
+
+.jus-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #3D2C5E;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.jus-stock {
+    font-size: 0.7rem;
+    color: #9CA3AF;
+}
+
+.jus-price-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.mini-diamond {
+    width: 6px;
+    height: 6px;
+    background: #9B7EC8;
+    transform: rotate(45deg);
+}
+
+.btn-gold-pill {
+    background: linear-gradient(135deg, #E8C547 0%, #D4AF37 100%);
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 8px 0;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(232, 197, 71, 0.2);
+}
+
+.fab-add {
+    position: fixed;
+    bottom: 90px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    background: #3D2C5E;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(61, 44, 94, 0.4);
+    z-index: 80;
+    border: none;
+}
+
+/* --- NEW BOTTOM SHEET MODAL STYLES --- */
+
+/* Backdrop fades in */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    display: flex;
+    align-items: flex-end;
+    /* Align to bottom for mobile */
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* The Sheet itself */
+.modal-card {
+    background: #FDFBF7;
+    /* Cream background */
+    width: 100%;
+    max-width: 500px;
+    /* Limit width on desktop */
+    border-radius: 32px 32px 0 0;
+    /* Round top corners only */
+    padding: 0;
+    /* Remove default padding, handle inside */
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.15);
+    animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+    /* Don't cover full screen */
+}
+
+/* Handle bar for visual affordance */
+.modal-handle-bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    cursor: grab;
+}
+
+.modal-handle-pill {
+    width: 40px;
+    height: 5px;
+    background: #E5E7EB;
+    border-radius: 10px;
+}
+
+/* Header inside sheet */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: #3D2C5E;
+    margin: 0;
+}
+
+/* Scrollable Content Area */
+.modal-scroll-content {
+    padding: 24px;
+    overflow-y: auto;
+    flex: 1;
+    /* Takes available space */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.form-group span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4B5563;
+}
+
+.form-row {
+    display: flex;
+    gap: 16px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.input {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    color: #3D2C5E;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.input:focus {
+    border-color: #9B7EC8;
+    box-shadow: 0 0 0 3px rgba(155, 126, 200, 0.15);
+}
+
+/* Image Selector */
+.image-selector {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 4px;
+    padding-bottom: 12px;
+}
+
+.image-option {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+
+.image-option img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-option.selected {
+    border-color: #9B7EC8;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(155, 126, 200, 0.3);
+}
+
+/* Footer Actions */
+.modal-footer {
+    padding: 16px 24px 32px;
+    /* Extra bottom padding for safe area */
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    background: white;
+    /* Contrast with cream body */
+}
+
+.btn-primary.w-full {
+    width: 100%;
+    border-radius: 16px;
+    padding: 14px;
+    font-size: 1.1rem;
+}
+
+.btn-danger-outline {
+    border: 1px solid #fee2e2;
+    color: #ef4444;
+    background: #fef2f2;
+    border-radius: 16px;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    margin-top: 0;
+    /* Reset margin */
+    width: 100%;
+}
+
+/* Close icon */
+.icon-btn {
+    background: #F3F4F6;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6B7280;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Desktop override to center it like a standard modal but keep the style */
+@media (min-width: 768px) {
+    .modal-backdrop {
+        align-items: center;
+    }
+
+    .modal-card {
+        border-radius: 24px;
+        /* All corners round */
+        max-height: 85vh;
+    }
+
+    .modal-footer {
+        border-radius: 0 0 24px 24px;
+    }
+}

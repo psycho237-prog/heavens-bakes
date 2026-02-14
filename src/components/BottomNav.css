@@ -1,0 +1,87 @@
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid var(--border);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.bottom-nav-inner {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+    max-width: 600px;
+    margin: 0 auto;
+    height: var(--bottom-nav-height);
+}
+
+.bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    flex: 1;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 8px 4px;
+}
+
+.bottom-nav-icon {
+    font-size: 1.35rem;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    line-height: 1;
+}
+
+.bottom-nav-item.active .bottom-nav-icon {
+    transform: scale(1.15) translateY(-2px);
+}
+
+.bottom-nav-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+    letter-spacing: 0.2px;
+}
+
+.bottom-nav-item.active .bottom-nav-label {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.bottom-nav-indicator {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+    border-radius: 0 0 3px 3px;
+    animation: indicatorIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes indicatorIn {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+
+    to {
+        width: 32px;
+        opacity: 1;
+    }
+}
+
+/* Ripple on tap */
+.bottom-nav-item:active .bottom-nav-icon {
+    transform: scale(0.9);
+}
