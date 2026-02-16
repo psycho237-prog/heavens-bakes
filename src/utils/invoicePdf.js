@@ -80,6 +80,9 @@ export function generateInvoicePDF(invoice) {
     const lines = doc.splitTextToSize(proverb, W - margin * 2)
     doc.text(lines, W / 2, y, { align: 'center' })
 
-    // Save
+    // Return blob if requested, otherwise save
+    if (invoice.returnBlob) {
+        return doc.output('blob')
+    }
     doc.save(`Facture-${String(invoice.number).padStart(4, '0')}.pdf`)
 }

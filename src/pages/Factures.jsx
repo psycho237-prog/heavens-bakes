@@ -3,6 +3,7 @@ import { useStore } from '../store/useStore'
 import { IconSearch, IconDownload, IconShare, IconReceipt, IconDove, IconPlus, IconUser, IconChevronRight } from '../components/Icons'
 import { Link } from 'react-router-dom'
 import { jsPDF } from 'jspdf'
+import { generateInvoicePDF } from '../utils/invoicePdf'
 import './Factures.css'
 
 export default function Factures() {
@@ -40,20 +41,39 @@ export default function Factures() {
         inv.number.toString().includes(search)
     )
 
-    const generatePDF = (invoice) => {
-        // ... (PDF generation logic - minimal update for now)
-        const doc = new jsPDF()
-        doc.setFontSize(20)
-        doc.text("Heaven's Bakes & Sips", 105, 20, { align: 'center' })
-        doc.setFontSize(10)
-        doc.text("Facture N°" + invoice.number, 105, 30, { align: 'center' })
-        doc.save(`Facture-${invoice.number}.pdf`)
+    const handleGeneratePDF = (invoice) => {
+        // Use the imported, styled generator
+        // Pass the randomVerse if desired, or let it pick one
+        generateInvoicePDF({ ...invoice, proverb: randomVerse })
     }
 
-    const shareInvoice = (invoice) => {
-        const text = `Facture N°${invoice.number} pour ${invoice.clientName}. Total: ${invoice.total} ${settings.currency}. ${randomVerse}`
-        const url = `https://wa.me/?text=${encodeURIComponent(text)}`
-        window.open(url, '_blank')
+    const shareInvoice = async (invoice) => {
+        try {
+            // Generate the PDF as a blob
+            const blob = generateInvoicePDF({ ...invoice, returnBlob: true, proverb: randomVerse })
+            const filename = `Facture-${String(invoice.number).padStart(4, '0')}.pdf`
+            const file = new File([blob], filename, { type: 'application/pdf' })
+
+            // Check if native sharing is supported (common on mobile)
+            if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+                await navigator.share({
+                    files: [file],
+                    title: 'Facture',
+                    text: `Facture N°${invoice.number} pour ${invoice.clientName}. Total: ${invoice.total} ${settings.currency}. ${randomVerse}`
+                })
+            } else {
+                // Fallback for desktop or unsupported browsers:
+                // Since we can't directly "send a file" to WhatsApp Web via URL,
+                // we warn the user and fallback to text, OR just download it.
+                // The user specifically asked for "not text".
+                // If we can't share the file, best is to download it and let them drag/drop.
+                alert("Le partage direct de fichier PDF n'est pas supporté sur ce navigateur. Le PDF va être téléchargé, vous pourrez l'envoyer manuellement.")
+                handleGeneratePDF(invoice)
+            }
+        } catch (error) {
+            console.error('Error sharing:', error)
+            // If share was cancelled or failed, no action needed or fallback to text
+        }
     }
 
     return (
@@ -168,7 +188,7 @@ export default function Factures() {
                     </div>
 
                     <div className="detail-actions">
-                        <button className="btn-outline-rounded" onClick={() => generatePDF(selectedInvoice)}>
+                        <button className="btn-outline-rounded" onClick={() => handleGeneratePDF(selectedInvoice)}>
                             <IconDownload size={18} /> Télécharger PDF
                         </button>
                         <button className="btn-gold-rounded" onClick={() => shareInvoice(selectedInvoice)}>
