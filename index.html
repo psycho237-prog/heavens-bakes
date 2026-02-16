@@ -25,6 +25,9 @@
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
+  <!-- 
+  Service Worker registration is disabled for development to prevent caching issues.
+  For production PWA support, consider using vite-plugin-pwa.
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
@@ -37,7 +40,8 @@
           });
       });
     }
-  </script>
+  </script> 
+  -->
 </body>
 
 </html>
